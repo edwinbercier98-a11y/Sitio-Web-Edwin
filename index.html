@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edwin B - Tech Solutions</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+    body{background:#0b0e19;color:white;overflow-x:hidden;}
+
+    header{
+      background:#111526;
+      padding:30px;
+      text-align:center;
+      font-size:38px;
+      font-weight:900;
+      letter-spacing:2px;
+      animation:slideDown .9s ease;
+    }
+    @keyframes slideDown{from{opacity:0;transform:translateY(-50px);}to{opacity:1;transform:translateY(0);}}
+
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      padding:18px;
+      background:#171b2c;
+      position:sticky;top:0;z-index:20;
+    }
+    nav a{
+      color:#d2dcff;
+      font-size:20px;font-weight:bold;
+      text-decoration:none;
+      transition:.3s;
+    }
+    nav a:hover{color:white;}
+
+    .hero{
+      text-align:center;
+      padding:80px 20px;
+    }
+    .hero h1{font-size:48px;margin-bottom:10px;color:#6ca8ff;}
+    .hero p{font-size:22px;opacity:.85;}
+
+    .section{padding:50px 20px;max-width:1100px;margin:auto;}
+    .section h2{
+      font-size:32px;
+      border-left:6px solid #6ca8ff;
+      padding-left:15px;
+      margin-bottom:25px;
+    }
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+
+    .card{
+      background:#151a2b;
+      padding:25px;
+      border-radius:14px;
+      border:1px solid #232a42;
+      transition:.25s;
+      cursor:pointer;
+      position:relative;
+    }
+    .card:hover{transform:translateY(-6px);background:#1b2135;}
+    .card h3{font-size:22px;color:#6ca8ff;margin-bottom:8px;}
+    .card p{opacity:.8;}
+
+    /* SUBMENÚ */
+    .submenu{
+      margin-top:15px;
+      padding:15px;
+      background:#101522;
+      border-radius:10px;
+      border:1px solid #232a42;
+      display:none;
+      animation:fade .3s ease;
+    }
+    @keyframes fade{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+    .submenu ul{list-style:none;}
+    .submenu li{padding:6px 0;font-size:17px;opacity:.9;}
+
+    /* CONTACTO */
+    .contact-box{
+      background:#151a2b;
+      padding:30px;
+      border-radius:12px;
+      border:1px solid #232a42;
+      font-size:22px;
+    }
+    .contact-box b{color:#6ca8ff;}
+
+    footer{text-align:center;margin-top:60px;padding:30px;font-size:18px;opacity:.6;}
+      /* BOTÓN WHATSAPP FLOTANTE */
+    .whatsapp-float{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      padding:12px 18px;
+      border-radius:50px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:#0e0e0e;
+      font-size:18px;
+      font-weight:bold;
+      box-shadow:0 0 20px rgba(0,0,0,.6);
+      transition:.3s;
+      z-index:999;
+    }
+    .whatsapp-float:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 25px #25d366;
+    }
+    .whatsapp-float img{
+      width:40px;
+      height:40px;
+    }
+    .wa-text{
+      font-size:18px;
+    }
+
+
+    /* BOTÓN WHATSAPP FLOTANTE */
+    .whatsapp-float{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      padding:12px 18px;
+      border-radius:50px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#0a0d18;
+      font-size:20px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 0 20px rgba(0,0,0,0.5);
+      transition:.3s;
+      z-index:9999;
+    }
+    .whatsapp-float img{
+      width:32px;
+      height:32px;
+    }
+    .whatsapp-float:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 25px #25d366;
+    }
+  </style>
+</head>
+<body>
+<header>EDWIN B.L — TECH SOLUTIONS</header>
+
+<nav>
+  <a href="#servicios">Servicios</a>
+  <a href="#desarrollo">Desarrollo</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section class="hero">
+  <h1>Innovación • Desarrollo • Tecnología</h1>
+  <p>Soluciones duras, profesionales y modernas pa' cualquier proyecto.</p>
+</section>
+
+<section id="servicios" class="section">
+  <h2>Servicios Técnicos</h2>
+  <div class="grid">
+
+    <div class="card" onclick="toggleSubmenu('s1')">
+      <h3>Formateo Profesional</h3>
+      <p>Optimización total pa' que tu PC vuelva a la vida.</p>
+      <div class="submenu" id="s1">
+        <ul>
+          <li>Formateo con copia de seguridad</li>
+          <li>Instalación de Windows</li>
+          <li>Optimización gamer</li>
+          <li>Limpieza de archivos basura</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSubmenu('s2')">
+      <h3>Eliminación de Virus</h3>
+      <p>Limpieza profunda garantizada.</p>
+      <div class="submenu" id="s2">
+        <ul>
+          <li>Eliminación de troyanos</li>
+          <li>Corrección de errores</li>
+          <li>Protección antivirus instalada</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSubmenu('s3')">
+      <h3>Instalación de Programas</h3>
+      <p>Todo listo pa' que trabajes de una vez.</p>
+      <div class="submenu" id="s3">
+        <ul>
+          <li>Paquetes escolares</li>
+          <li>Programas de oficina</li>
+          <li>Drivers completos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSubmenu('s4')">
+      <h3>Montaje de Piezas</h3>
+      <p>Actualizaciones y reparaciones.</p>
+      <div class="submenu" id="s4">
+        <ul>
+          <li>Cambio de RAM / SSD</li>
+          <li>Montaje de tarjetas</li>
+          <li>Diagnóstico rápido</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="desarrollo" class="section">
+  <h2>Desarrollo & Programación</h2>
+  <div class="grid">
+
+    <div class="card" onclick="toggleSubmenu('d1')">
+      <h3>Páginas Web Modernas</h3>
+      <p>Diseños pulidos, rápidos y elegantes.</p>
+      <div class="submenu" id="d1">
+        <ul>
+          <li>Landing pages</li>
+          <li>Portafolios</li>
+          <li>Tiendas básicas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSubmenu('d2')">
+      <h3>Aplicaciones Básicas</h3>
+      <p>Ideal pa' proyectos o negocios.</p>
+      <div class="submenu" id="d2">
+        <ul>
+          <li>Apps CRUD</li>
+          <li>Apps offline</li>
+          <li>Herramientas personales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSubmenu('d3')">
+      <h3>Automatizaciones</h3>
+      <p>Scripts que te ahorran horas de trabajo.</p>
+      <div class="submenu" id="d3">
+        <ul>
+          <li>Bots básicos</li>
+          <li>Automatización de tareas</li>
+          <li>Optimización de procesos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleSubmenu('d4')">
+      <h3>Diseño Digital</h3>
+      <p>Artes visuales pa' redes y marcas.</p>
+      <div class="submenu" id="d4">
+        <ul>
+          <li>Flyers y posters</li>
+          <li>Logos</li>
+          <li>Branding visual</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <h2>Contacto</h2>
+  <div class="contact-box">
+    📍 <b>Santiago de los Caballeros</b><br>
+    📞 <b>+1 809-323-2196</b><br>
+    💬 WhatsApp disponible<br>
+    🚀 Servicios remotos y presenciales
+  </div>
+</section>
+
+<footer>© 2025 — Edwin B — Soluciones Tecnológicas  <div style="margin-top:20px; text-align:center;">
+    <a href="https://wa.me/18093232196" target="_blank" style="text-decoration:none;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="#25D366" style="cursor:pointer; transition:.3s;">
+        <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.93C.16 5.3 5.3.16 11.887.16c3.18 0 6.167 1.24 8.413 3.487A11.82 11.82 0 0123.84 12c-.003 6.59-5.144 11.73-11.733 11.73a11.9 11.9 0 01-5.93-1.587L.057 24zm6.597-3.807c1.742.995 3.27 1.591 5.24 1.592 5.448 0 9.886-4.434 9.89-9.878.003-5.462-4.415-9.89-9.881-9.894-5.452 0-9.887 4.434-9.89 9.88a9.81 9.81 0 001.523 5.168l-.999 3.648 3.117-.884zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.03-.967-.272-.099-.47-.148-.669.149-.198.297-.768.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.793.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.007-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+function toggleSubmenu(id){
+  const box=document.getElementById(id);
+  box.style.display = box.style.display==="block" ? "none" : "block";
+}
+</script>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/18093232196" target="_blank" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    <span>Contáctame</span>
+  </a>
+
+</body>
+</html>
